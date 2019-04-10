@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML DOM</title>
+    <script type="text/javascript">
+        function toggleMune(number){
+            var spanObj = window.document.getElementById("menu"+number);
+            spanObj.classList.toggle("hide");
+            // if(spanObj.style.display == "none"){
+            //     spanObj.style.display = "block";
+            // }
+            // else{
+            //     spanObj.style.display = "none";
+            // }
+        }
+    </script>
+    <style type="text/css">
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div onclick="toggleMune(1);">menu 1</div>
+    <ul id="menu1" class="hide">
+        <li>item1 basic</li>
+        <li>item2 medium</li>
+        <li>item3 advanced</li>
+    </ul>
+    <div onclick="toggleMune(2);">menu 2</div>
+    <ul id="menu2" class="hide">
+        <li>item1 basic</li>
+        <li>item2 medium</li>
+        <li>item3 advanced</li>
+    </ul>
+    <div onclick="toggleMune(3);">menu 3</div>
+    <ul id="menu3" class="hide">
+        <li>item1 basic</li>
+        <li>item2 medium</li>
+        <li>item3 advanced</li>
+    </ul>
+
+</body>
+</html>

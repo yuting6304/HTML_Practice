@@ -1,0 +1,44 @@
+body {
+    margin: 0px;
+}
+nav {
+    display: flex;
+}
+nav>.logo {
+    flex: none; width: 100px;
+    background-color: #ffcccc;
+}
+nav>.menu {
+    flex: auto;
+    background-color: #ccccff;
+}
+nav>.user {
+    flex: none; width: 100px;
+    background-color: #ccffcc;
+}
+/* main */ 
+/*container*/
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: #cccccc;
+}
+/*item*/
+main>.item {
+    flex: none;
+    width: 270px; margin: 10px;
+    background-color: #ffcccc;
+}
+
+@media (max-width:1200px) {
+    main>.item {
+        width: 45%;
+    }
+}
+@media (max-width:700px) {
+    main>.item {
+        width: 90%;
+    }
+}

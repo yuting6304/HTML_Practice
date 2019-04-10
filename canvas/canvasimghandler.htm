@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Canvas</title>
+    <script type="text/javascript">
+        
+        // 載入，準備的部份
+        var cvs, ctx;
+        window.onload = function(){
+            cvs = document.getElementById("cvs");
+            ctx = cvs.getContext("2d");
+            // 載入影像
+            var img = new Image();
+            img.src="landscape.jpg";
+            // 註冊load事件，圖片完成後才進行繪製
+            img.onload = function(){
+                ctx.drawImage(this, 0, 0, cvs.width, cvs.height);
+            }
+        }
+
+        // 顏色反轉，影像處理的部份
+        function invertColor(){
+            // 取得ImageData物件
+            var pixels = ctx.getImageData(0, 0, cvs.width, cvs.height);
+            var data = pixels.data; //一個像素佔據4個資料(bytes), (r 紅, g 綠, b 藍, a 透明度)(範圍 0～255)
+            for(var i = 0; i < data.length; i+=4){
+                data[i] = 255-data[i]; //紅色的影像反轉
+                data[i+1] = 255-data[i+1];  //綠
+                data[i+2] = 255-data[i+2];  //藍
+            }
+            // 將處理過得資料放回畫布中
+            ctx.putImageData(pixels, 0, 0);
+        }
+    </script>
+</head>
+<body>
+    <div><button onclick="invertColor()">顏色反轉</button></div>
+    <!-- 建立一個canvas區塊，在區塊內做canvas相關應用 -->
+    <canvas id="cvs" width="800" height="600" style="border: 1px solid #000000"></canvas>
+</body>    
+</html>

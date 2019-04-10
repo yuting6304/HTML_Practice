@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SVG introduction</title>
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+    <svg width = "640" height = "480" style="border: 1px solid #000000">
+        <!-- 兩個點之間的連線 -->
+        <line x1 = "50" y1 = "50" x2 = "350" y2 = "350" stroke = "red" stroke-width = "2"></line>
+        <!-- 取圓心座標和半徑就可以畫圓了 -->
+        <circle cx = "200" cy = "50" r = "50", fill = "#ffcc00"></circle>
+        <!-- 方形：取左上角的座標，長，寬 -->
+        <rect x = "150" y = "100" width = "100" height = "100" fill = "blue"></rect>
+        <!--多邊形 points = (x1,y1, x2,y2 ,.....) 取多個點座標相連得到多邊形 -->
+        <polygon points = "150, 200, 250, 200, 200, 300" fill = "green"></polygon>
+        <!-- 文字：給定開頭的座標，也可以設定字體和大小 -->
+        <text x = "100", y = "100" fill = "purple", font-weight = "bold" font-size = "45">Hello SVG</text>
+    </svg>
+</body>
+</html>

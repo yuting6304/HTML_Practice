@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Json basic toturial</title>
+    <!-- JSON : Javascript Object Notation -->
+    <script type="text/javascript">
+        
+        // Javascript
+        /*  var point = new Object();
+            point.x = 3;
+            point.y = 4;
+            point.get = function(){
+                alert(this.x + "," + this.y);
+            }
+        */
+
+        // Json
+        var point = {
+                "x" : 3, 
+                "y" : 4, 
+                "get" : function(){
+                            alert(this.x + "," + this.y);
+                        }
+        };
+        
+        // object -> string
+        var jsonStr = JSON.stringify(point);
+        console.log(jsonStr);
+
+        // string -> object
+        var plainObj = JSON.parse(jsonStr);
+        console.log(plainObj);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

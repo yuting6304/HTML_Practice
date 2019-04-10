@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>css selection</title>
+<style type="text/css">
+
+/*label css selector */
+body {
+    /* 設定網頁基本文字大小 */
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+h3 {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+/* class css selector */
+div.content {
+    padding: 10px; border: 1px dashed #888888
+}
+
+/* id css selector */
+/* usually used by javascript */
+#btn {
+    border: 1px solid #888888;
+    background-color: #c1233c; padding: 5px;
+}
+
+/* virtual css selector combine with other selector */
+/* :hover virtual selector */
+#btn:hover {
+    background-color: #888888;
+}
+
+/* :focus virtual selector */
+input:focus {
+    border: 2px solid #ff0000;
+}
+
+/* 階層式 css selector conbine with other selector */
+.favorite a{
+    color: #ff2111;
+}
+.demo a{
+    color: #008800;
+}
+
+</style>
+</head>
+<body>
+    <h3>我的自我介紹</h3>
+    <div class="content">
+        大家好
+    </div>
+    
+    <h3>我的最愛連結</h3>
+    <ul class="favorite">
+        <li><a href="https://www.facebook.com/">Facebook</a></li>
+        <li><a href="https://www.youtube.com/">Youtube</a></li>
+    </ul>
+
+    <h3>我的作品</h3>
+    <ul class="demo">
+        <li><a href="https://www.facebook.com/">Facebook</a></li>
+        <li><a href="https://www.youtube.com/">Youtube</a></li>
+    </ul>
+
+    <h3>和我聯絡</h3>
+    <div class="content">
+        填寫訊息 <input type="text" /> <button id="btn">送出</button>
+    </div>
+
+</body>
+</html>

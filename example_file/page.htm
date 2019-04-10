@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ajax Chosen Page</title>
+    <script type="text/javascript">
+        function getData(pageName){
+            //XMLHttpRequest used to connect with server
+            var req = new XMLHttpRequest();
+            if(pageName == "popular"){
+                req.open("get", "http://127.0.0.1:8887/popular.htm");
+            }
+            else{
+                req.open("get", "http://127.0.0.1:8887/latest.htm");
+            }
+            
+            // when the connection successful and get the data back
+            // then do  the following function
+            req.onload = function(){
+                // get the response from the web server
+                var content = document.getElementById("content");
+                content.innerHTML = this.responseText;
+                // alert(this.responseText);
+            }
+            req.send();
+        }
+    </script>
+</head>
+<body>
+
+    <div onclick="getData('popular')">Popular</div>
+    <div onclick="getData('latest')">Latest</div>
+
+    <hr/>
+    <div id="content"></div>
+
+</body>
+</html>
